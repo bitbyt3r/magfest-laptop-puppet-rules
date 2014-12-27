@@ -1,7 +1,7 @@
 class graphicscard {
   # Include the correct videocard drivers automatically.
   $driverclass = $::videocard ? {
-    /.*NVIDIA.*/            => 'nouveau',
+    /.*NVIDIA.*/            => 'nvidia',
     /.*Intel Corporation.*/ => 'intel',
     /.*ATI.*/               => 'ati',
     /.InnoTek.*/            => 'innotek',
