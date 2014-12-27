@@ -1,7 +1,7 @@
 class graphicscard::innotek {
   package { 'virtualbox-guest-utils':
     ensure => latest,
-    nofify => Exec['modprobe-virtualbox']
+    notify => Exec['modprobe-virtualbox']
   }
   service { 'vboxservice':
     ensure => running,
