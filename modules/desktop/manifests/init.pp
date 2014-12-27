@@ -17,6 +17,9 @@ class desktop {
   package { 'lightdm-gtk3-greeter':
     ensure => latest
   } ->
+  package { 'mate-terminal':
+    ensure => latest
+  } ->
   service { 'lightdm':
     ensure => running,
     enable => true
