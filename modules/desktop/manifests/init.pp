@@ -23,6 +23,10 @@ class desktop {
   service { 'lightdm':
     enable => true
   }
+  file { '/etc/systemd/system/multi-user.target.wants/display-manager.service':
+    ensure => link, 
+    target => '/etc/systemd/system/display-manager.service'
+  }
   user { 'magfest':
     ensure => present,
     password => '$6$bW0fbxJi$6M7.d/QmjjtStNmWZH4eWycKgz40wAGwVggjWZ9wWFNj2gGNqbd3uSuiiblmq/yZoHa2CvgdUVrpO7bwnRrj7/'
