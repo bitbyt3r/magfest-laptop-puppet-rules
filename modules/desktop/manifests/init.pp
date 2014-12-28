@@ -1,8 +1,8 @@
 class desktop {
-  package { ['mate', 'slim', 'xorg-server', 'xorg-server-utils']:
+  package { ['mate', 'lightdm', 'xorg-server', 'xorg-server-utils']:
     ensure => latest
   } ->
-  package { ['xorg-xinit', 'mate-terminal']:
+  package { ['xorg-xinit', 'mate-terminal', 'lightdm-gtk3-greeter']:
     ensure => latest
   } ->
   package { ['xorg-xrandr', 'mate-extra', 'yelp', 'curl', 'dnsutils']:
@@ -20,10 +20,11 @@ class desktop {
   package { ['chromium', 'firefox', 'python2', 'python2-pygame']:
     ensure => latest
   }
-  service { 'slim':
+  service { 'lightdm':
     enable => true
   }
   user { 'magfest':
-    ensure => present
+    ensure => present,
+    password => '$6$bW0fbxJi$6M7.d/QmjjtStNmWZH4eWycKgz40wAGwVggjWZ9wWFNj2gGNqbd3uSuiiblmq/yZoHa2CvgdUVrpO7bwnRrj7/'
   }
 }
