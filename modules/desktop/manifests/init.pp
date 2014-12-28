@@ -20,6 +20,9 @@ class desktop {
   package { 'mate-terminal':
     ensure => latest
   } ->
+  package { 'firefox':
+    ensure => latest
+  } ->
   service { 'lightdm':
     ensure => running,
     enable => true
