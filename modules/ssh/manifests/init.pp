@@ -11,7 +11,7 @@ class ssh ($authkeys = ['mark']) {
   file { '/etc/ssh/sshd_config':
     source => 'puppet:///modules/ssh/sshd_config'
   }
-  file { /etc/issue':
+  file { '/etc/issue':
     source => 'puppet:///modules/ssh/issue'
   }
 }
