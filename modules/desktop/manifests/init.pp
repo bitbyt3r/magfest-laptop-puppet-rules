@@ -2,7 +2,7 @@ class desktop {
   package { ['mate', 'slim', 'xorg-server', 'xorg-server-utils']:
     ensure => latest
   } ->
-  package { ['xorg-xinit', 'lightdm-gtk3-greeter', 'mate-terminal']:
+  package { ['xorg-xinit', 'mate-terminal']:
     ensure => latest
   } ->
   package { ['xorg-xrandr', 'mate-extra', 'yelp', 'curl', 'dnsutils']:
