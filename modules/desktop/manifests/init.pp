@@ -27,6 +27,9 @@ class desktop {
     ensure => link, 
     target => '/etc/systemd/system/display-manager.service'
   }
+  package { 'ruby-shadow':
+    ensure => present
+  } ->
   user { 'magfest':
     ensure => present,
     password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.'
