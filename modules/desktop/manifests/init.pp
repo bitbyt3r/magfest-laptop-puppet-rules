@@ -23,4 +23,7 @@ class desktop {
   service { 'slim':
     enable => true
   }
+  user { 'magfest':
+    ensure => present
+  }
 }
