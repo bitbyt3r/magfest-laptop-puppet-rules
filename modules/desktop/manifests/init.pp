@@ -24,7 +24,6 @@ class desktop {
     ensure => latest
   } ->
   service { 'lightdm':
-    ensure => running,
     enable => true
   }
 }
