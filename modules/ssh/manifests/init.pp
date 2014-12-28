@@ -4,7 +4,7 @@ class ssh ($authkeys = ['mark']) {
   }
   package { 'openssh':
     ensure => latest
-  }
+  } ->
   service { 'sshd':
     enable => true
   }
