@@ -29,6 +29,6 @@ class desktop {
   }
   user { 'magfest':
     ensure => present,
-    password => '$6$bW0fbxJi$6M7.d/QmjjtStNmWZH4eWycKgz40wAGwVggjWZ9wWFNj2gGNqbd3uSuiiblmq/yZoHa2CvgdUVrpO7bwnRrj7/'
+    password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.'
   }
 }
