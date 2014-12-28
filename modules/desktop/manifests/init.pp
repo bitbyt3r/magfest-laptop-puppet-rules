@@ -1,24 +1,24 @@
 class desktop {
   package { ['mate', 'lightdm', 'xorg-server', 'xorg-server-utils']:
-    ensure => latest
+    ensure => present
   } ->
   package { ['xorg-xinit', 'mate-terminal', 'lightdm-gtk3-greeter']:
-    ensure => latest
+    ensure => present
   } ->
   package { ['xorg-xrandr', 'mate-extra', 'yelp', 'curl', 'dnsutils']:
-    ensure => latest
+    ensure => present
   } ->
   package { ['tcpdump', 'traceroute', 'wget', 'bzip2', 'gzip']:
-    ensure => latest
+    ensure => present
   }
   package { ['tar', 'zip', 'unzip', 'p7zip', 'xz', 'arj', 'unrar']:
-    ensure => latest
+    ensure => present
   }
   package { ['unace', 'caja', 'atril', 'pluma', 'stone-soup', 'rxvt']:
-    ensure => latest
+    ensure => present
   }
   package { ['chromium', 'firefox', 'python2', 'python2-pygame']:
-    ensure => latest
+    ensure => present
   }
   service { 'lightdm':
     enable => true
