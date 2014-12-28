@@ -2,8 +2,8 @@
 Description=Set default boot to challenges
 
 [Service]
-Type=onshot
-ExecStart=cp /boot/syslinux/challenges.cfg /boot/syslinux/syslinux.cfg
+Type=oneshot
+ExecStart=/usr/bin/cp /boot/syslinux/challenges.cfg /boot/syslinux/syslinux.cfg
 
 [Install]
 WantedBy=challenge.target

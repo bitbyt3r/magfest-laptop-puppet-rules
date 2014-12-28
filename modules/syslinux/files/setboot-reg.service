@@ -2,8 +2,8 @@
 Description=Set default boot to registration
 
 [Service]
-Type=onshot
-ExecStart=cp /boot/syslinux/registration.cfg /boot/syslinux/syslinux.cfg
+Type=oneshot
+ExecStart=/usr/bin/cp /boot/syslinux/registration.cfg /boot/syslinux/syslinux.cfg
 
 [Install]
 WantedBy=multi-user.target
