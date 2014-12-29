@@ -4,6 +4,7 @@ Description=Set default boot to challenges
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/cp /boot/syslinux/challenges.cfg /boot/syslinux/syslinux.cfg
+ExecStart=/usr/bin/rm /var/run/nologin
 
 [Install]
 WantedBy=challenge.target
