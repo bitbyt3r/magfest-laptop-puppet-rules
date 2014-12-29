@@ -17,15 +17,15 @@ class desktop {
   } ->
   exec { '/usr/bin/cp /usr/share/applications/chromium.desktop /home/magfest/Desktop/chromium.desktop':
     creates => '/home/magfest/Desktop/chromium.desktop',
-    requires => Package['chromium']
+    require => Package['chromium']
   } ->
   exec { '/usr/bin/cp /usr/share/applications/firefox.desktop /home/magfest/Desktop/firefox.desktop':
     creates => '/home/magfest/Desktop/firefox.desktop',
-    requires => Package['firefox']
+    require => Package['firefox']
   }
   file { '/usr/share/applications/system-config-printer.desktop':
     source => 'puppet:///modules/desktop/system-config-printer.desktop',
-    requires => Package['system-config-printer']
+    require => Package['system-config-printer']
   }
   package { ['mate', 'lightdm', 'xorg-server', 'xorg-server-utils']:
     ensure => present
