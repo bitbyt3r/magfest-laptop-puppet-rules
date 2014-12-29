@@ -23,6 +23,10 @@ class desktop {
     creates => '/home/magfest/Desktop/firefox.desktop',
     requires => Package['firefox']
   }
+  file { '/usr/share/applications/system-config-printer.desktop':
+    source => 'puppet:///modules/desktop/system-config-printer.desktop',
+    requires => Package['system-config-printer']
+  }
   package { ['mate', 'lightdm', 'xorg-server', 'xorg-server-utils']:
     ensure => present
   } ->
