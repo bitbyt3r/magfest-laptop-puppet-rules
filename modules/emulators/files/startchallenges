@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+/usr/bin/lightdm -c /etc/lightdm/challenges.conf

@@ -2,8 +2,7 @@
 Description=Run Magfest Challenges
 
 [Service]
-ExecStart=/usr/bin/xinit /usr/bin/python /home/magfest/LinuxM12Challenges.py
-User=magfest
+ExecStart=/usr/bin/startchallenges
 
 [Install]
 WantedBy=challenge.target
