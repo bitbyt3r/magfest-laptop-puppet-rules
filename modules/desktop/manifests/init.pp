@@ -15,13 +15,17 @@ class desktop {
     owner => magfest,
     group => magfest
   } ->
-  exec { '/usr/bin/cp /usr/share/applications/chromium.desktop /home/magfest/Desktop/chromium.desktop':
-    creates => '/home/magfest/Desktop/chromium.desktop',
-    require => Package['chromium']
+  file { '/home/magfest/Desktop/chromium.desktop':
+    owner => magfest,
+    group => magfest,
+    mode => 755,
+    source => 'puppet:///modules/desktop/chromium.desktop'
   } ->
-  exec { '/usr/bin/cp /usr/share/applications/firefox.desktop /home/magfest/Desktop/firefox.desktop':
-    creates => '/home/magfest/Desktop/firefox.desktop',
-    require => Package['firefox']
+  file { '/home/magfest/Desktop/firefox.desktop':
+    owner => magfest,
+    group => magfest,
+    mode => 755,
+    source => 'puppet:///modules/desktop/firefox.desktop'
   }
   file { '/usr/share/applications/system-config-printer.desktop':
     source => 'puppet:///modules/desktop/system-config-printer.desktop',
