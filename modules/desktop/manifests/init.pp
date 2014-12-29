@@ -72,7 +72,11 @@ class desktop {
   }
   file { '/etc/lightdm/lightdm.conf':
     ensure => file,
-    source => 'puppet:///modules/desktop/lightdm.conf'
+    source => 'puppet:///modules/desktop/lightdm.conf',
+    require => File['/etc/lightdm']
+  }
+  file { '/etc/lightdm':
+    ensure => directory
   }
   file { '/usr/share/glib-2.0/schemas/mate-background.gschema.override':
     ensure => file,
