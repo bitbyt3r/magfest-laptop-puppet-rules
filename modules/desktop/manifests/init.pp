@@ -28,6 +28,10 @@ class desktop {
     ensure => link, 
     target => '/etc/systemd/system/display-manager.service'
   }
+  file { '/etc/systemd/system/challenge.target.wants/display-manager.service':
+    ensure => link, 
+    target => '/etc/systemd/system/display-manager.service'
+  }
   package { 'ruby-shadow':
     ensure => present
   } ->
