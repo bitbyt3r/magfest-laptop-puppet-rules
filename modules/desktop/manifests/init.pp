@@ -53,6 +53,9 @@ class desktop {
     enable => true,
     require => Package['networkmanager']
   }
+  exec { '/usr/bin/systemctl enable NetworkManager':
+    creates => '/etc/systemd/system/multi-user.target.wants/NetworkManager.service'
+  }
 
   service { 'org.cups.cupsd':
     enable => true,
