@@ -5,6 +5,7 @@ class graphicscard {
     /.*Intel Corporation.*/ => 'intel',
     /.*ATI.*/               => 'ati',
     /.InnoTek.*/            => 'innotek',
+    /.VMware.*/             => 'vmware',
     default                 => ''
   }
 
