@@ -40,7 +40,7 @@ class desktop {
   package { ['chromium', 'firefox', 'python2', 'python2-pygame', 'base-devel']:
     ensure => present
   }
-  package { ['networkmanager', 'network-manager-applet']:
+  package { ['networkmanager', 'network-manager-applet', 'dhclient']:
     ensure => present
   }
   service { 'lightdm':
@@ -54,10 +54,6 @@ class desktop {
   file { '/etc/systemd/system/challenge.target.wants/display-manager.service':
     ensure => link, 
     target => '/etc/systemd/system/display-manager.service'
-  }
-  file { '/etc/systemd/system/challenge.target.wants/dhcpcd.service':
-    ensure => link,
-    target => '/usr/lib/systemd/system/dhcpcd.service'
   }
   file { '/etc/systemd/system/challenge.target.wants/ntpd.service':
     ensure => link,
