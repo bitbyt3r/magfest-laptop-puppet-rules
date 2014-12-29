@@ -40,6 +40,9 @@ class desktop {
   package { ['chromium', 'firefox', 'python2', 'python2-pygame', 'base-devel']:
     ensure => present
   }
+  package { ['networkmanager', 'network-manager-applet']:
+    ensure => present
+  }
   service { 'lightdm':
     enable => true,
     subscribe => File['/etc/lightdm/lightdm.conf']
@@ -108,5 +111,9 @@ class desktop {
   file { '/etc/sudoers':
     ensure => file,
     source => 'puppet:///modules/desktop/sudoers'
+  }
+  service { 'NetworkManager':
+    enable => true,
+    require => Package['networkmanager']
   }
 }
