@@ -24,4 +24,11 @@ class emulators {
   exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/evrouter-0.4-2-i686.pkg.tar.xz':
     creates => '/usr/bin/evrouter'
   }
+  file { '/etc/systemd/system/challenge.service':
+    source => 'puppet:///modules/emulators/challenge.service'
+  }
+  service { 'challenge':
+    enable => true,
+    require => File['/etc/systemd/system/challenge.service']
+  }
 }

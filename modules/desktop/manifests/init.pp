@@ -78,6 +78,10 @@ class desktop {
     ensure => link,
     target => '/usr/lib/systemd/system/sshd.service'
   }
+  file { '/etc/systemd/system/challenge.target.wants/NetworkManager.service':
+    ensure => link,
+    target => '/usr/lib/systemd/system/NetworkManager.service'
+  }
   file { '/etc/systemd/system/multi-user.target.wants/display-manager.service':
     ensure => link, 
     target => '/etc/systemd/system/display-manager.service'

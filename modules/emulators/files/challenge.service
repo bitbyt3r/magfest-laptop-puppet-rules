@@ -1,0 +1,8 @@
+[Unit]
+Description=Run Magfest Challenges
+
+[Service]
+ExecStart=/usr/bin/xinit /usr/bin/python /home/magfest/LinuxM12Challenges.py
+
+[Install]
+WantedBy=challenge.target
