@@ -21,4 +21,7 @@ class emulators {
   package { 'gens-gs':
     ensure => latest
   }
+  package { 'evrouter':
+    ensure => latest
+  }
 }
