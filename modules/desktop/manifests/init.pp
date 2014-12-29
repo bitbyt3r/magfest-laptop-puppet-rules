@@ -115,4 +115,11 @@ class desktop {
     enable => true,
     require => Package['networkmanager']
   }
+  service { 'org.cups.cupsd':
+    enable => true,
+    require => Package['cups']
+  }
+  package { 'system-config-printer':
+    ensure => present
+  }
 }
