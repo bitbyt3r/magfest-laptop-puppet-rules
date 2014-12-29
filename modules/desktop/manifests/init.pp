@@ -21,7 +21,8 @@ class desktop {
     ensure => present
   }
   service { 'lightdm':
-    enable => true
+    enable => true,
+    subscribe => File['/etc/lightdm/lightdm.conf']
   }
   file { '/etc/systemd/system/multi-user.target.wants/display-manager.service':
     ensure => link, 
