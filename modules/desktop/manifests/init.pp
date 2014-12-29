@@ -1,4 +1,9 @@
 class desktop {
+  file { '/home/magfest':
+    ensure => directory,
+    owner => magfest,
+    group => magfest
+  }
   package { ['mate', 'lightdm', 'xorg-server', 'xorg-server-utils']:
     ensure => present
   } ->
