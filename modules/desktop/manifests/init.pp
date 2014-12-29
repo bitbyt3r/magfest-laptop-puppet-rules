@@ -33,7 +33,8 @@ class desktop {
   } ->
   user { 'magfest':
     ensure => present,
-    password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.'
+    password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.',
+    groups => 'autologin'
   }
   file { '/usr/share/magfest':
     ensure => directory
