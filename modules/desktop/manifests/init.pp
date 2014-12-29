@@ -62,10 +62,6 @@ class desktop {
   file { '/etc/systemd/system/challenge.target.wants':
     ensure => directory
   } ->
-  file { '/etc/systemd/system/challenge.target.wants/display-manager.service':
-    ensure => link, 
-    target => '/etc/systemd/system/display-manager.service'
-  } ->
   file { '/etc/systemd/system/challenge.target.wants/ntpd.service':
     ensure => link,
     target => '/usr/lib/systemd/system/ntpd.service'
