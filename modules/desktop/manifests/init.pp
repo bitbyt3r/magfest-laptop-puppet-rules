@@ -8,6 +8,16 @@ class desktop {
     ensure => directory,
     owner => magfest,
     group => magfest
+  } ->
+  file { '/home/magfest/Desktop/chromium.desktop':
+    ensure => file,
+    owner => magfest,
+    group => magfest
+  } ->
+  file { '/home/magfest/Desktop/firefox.desktop':
+    ensure => file,
+    owner => magfest,
+    group => magfest
   }
   package { ['mate', 'lightdm', 'xorg-server', 'xorg-server-utils']:
     ensure => present
