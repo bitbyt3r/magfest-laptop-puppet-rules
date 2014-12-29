@@ -1,4 +1,9 @@
 class desktop {
+  file { '/home/magfest/.config/dconf/user':
+    source => 'puppet:///modules/desktop/user',
+    owner => magfest,
+    group => magfest
+  }
   file { '/home/magfest':
     ensure => directory,
     owner => magfest,
