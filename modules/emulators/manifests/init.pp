@@ -21,7 +21,7 @@ class emulators {
   package { 'gens-gs':
     ensure => latest
   }
-  package { 'evrouter':
-    ensure => latest
+  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/evrouter-0.4-2-i686.pkg.tar.xz':
+    creates => '/usr/bin/evrouter'
   }
 }
