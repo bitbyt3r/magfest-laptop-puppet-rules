@@ -17,10 +17,22 @@ class syslinux {
   file { '/etc/systemd/system/setboot-reg.service':
     source => 'puppet:///modules/syslinux/setboot-reg.service'
   } ->
+  file { '/etc/systemd/system/setboot-kiosk.service':
+    source => 'puppet:///modules/syslinux/setboot-kiosk.service'
+  } ->
+  file { '/etc/systemd/system/kiosk.target':
+    source => 'puppet:///modules/syslinux/kiosk.target'
+  } ~>
+  exec { '/usr/bin/systemctl daemon-reload':
+    refreshonly => true
+  } ->
   service { 'setboot-challenges':
     enable => true
   } ->
   service { 'setboot-reg':
+    enable => true
+  } ->
+  service { 'setboot-kiosk':
     enable => true
   }
 }
