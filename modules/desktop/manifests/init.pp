@@ -15,15 +15,13 @@ class desktop {
     owner => magfest,
     group => magfest
   } ->
-  file { '/home/magfest/Desktop/chromium.desktop':
-    ensure => file,
-    owner => magfest,
-    group => magfest
+  exec { '/usr/bin/cp /usr/share/applications/chromium.desktop /home/magfest/Desktop/chromium.desktop':
+    creates => '/home/magfest/Desktop/chromium.desktop',
+    requires => Package['chromium']
   } ->
-  file { '/home/magfest/Desktop/firefox.desktop':
-    ensure => file,
-    owner => magfest,
-    group => magfest
+  exec { '/usr/bin/cp /usr/share/applications/firefox.desktop /home/magfest/Desktop/firefox.desktop':
+    creates => '/home/magfest/Desktop/firefox.desktop',
+    requires => Package['firefox']
   }
   package { ['mate', 'lightdm', 'xorg-server', 'xorg-server-utils']:
     ensure => present
