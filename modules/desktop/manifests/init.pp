@@ -5,6 +5,11 @@ class desktop {
   exec { '/usr/bin/updatedb':
     refreshonly => true
   }
+  file { ['/home/magfest/.confg', '/home/magfest/.config/dconf']:
+    ensure => directory,
+    owner => magfest,
+    group => magfest
+  } ->
   file { '/home/magfest/.config/dconf/user':
     source => 'puppet:///modules/desktop/user',
     owner => magfest,
