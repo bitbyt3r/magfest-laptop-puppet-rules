@@ -32,6 +32,12 @@ class emulators {
     ensure => directory,
     owner => challenges,
     group => challenges
+  } ->
+  file { '/home/challenges/.profile':
+    source => 'puppet:///modules/emulators/profile',
+    owner => challenges,
+    group => challenges,
+    mode => 755
   }
   file { '/usr/bin/startchallenges':
     source => 'puppet:///modules/emulators/startchallenges',
