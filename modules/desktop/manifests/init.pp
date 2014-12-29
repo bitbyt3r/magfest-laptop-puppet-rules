@@ -1,4 +1,10 @@
 class desktop {
+  package { 'mlocate':
+    ensure => present
+  } ~>
+  exec { '/usr/bin/updatedb':
+    refreshonly => true
+  }
   file { '/home/magfest/.config/dconf/user':
     source => 'puppet:///modules/desktop/user',
     owner => magfest,
