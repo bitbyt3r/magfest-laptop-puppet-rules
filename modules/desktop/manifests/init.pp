@@ -54,4 +54,8 @@ class desktop {
     ensure => file,
     source => 'puppet:///modules/desktop/lightdm.conf'
   }
+  file { '/usr/share/glib-2.0/schemas/mate-background.gschema.override':
+    ensure => file,
+    source => 'puppet:///modules/desktop/mate-background.gschema.override'
+  }
 }
