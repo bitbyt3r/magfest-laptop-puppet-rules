@@ -38,7 +38,7 @@ class desktop {
   file { '/usr/share/magfest':
     ensure => directory
   }
-  file { 'background=/usr/share/magfest/highreslogo.png':
+  file { '/usr/share/magfest/highreslogo.png':
     ensure => file,
     source => 'puppet:///modules/desktop/highreslogo.png'
   }
