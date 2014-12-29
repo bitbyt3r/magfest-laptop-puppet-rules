@@ -24,9 +24,6 @@ class desktop {
     enable => true,
     subscribe => File['/etc/lightdm/lightdm.conf']
   }
-  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/challenges-13.0.0.0-any.pkg.tar.xz':
-    creates => '/home/magfest/.fceux/fceux.cfg'
-  }
   file { '/etc/systemd/system/multi-user.target.wants/display-manager.service':
     ensure => link, 
     target => '/etc/systemd/system/display-manager.service'
