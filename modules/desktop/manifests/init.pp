@@ -17,7 +17,7 @@ class desktop {
   package { ['unace', 'caja', 'atril', 'pluma', 'stone-soup', 'rxvt']:
     ensure => present
   }
-  package { ['chromium', 'firefox', 'python2', 'python2-pygame']:
+  package { ['chromium', 'firefox', 'python2', 'python2-pygame', 'base-devel']:
     ensure => present
   }
   service { 'lightdm':
