@@ -32,6 +32,22 @@ class desktop {
     ensure => link, 
     target => '/etc/systemd/system/display-manager.service'
   }
+  file { '/etc/systemd/system/challenge.target.wants/dhcpcd.service':
+    ensure => link,
+    target => /usr/lib/systemd/system/dhcpcd.service'
+  }
+  file { '/etc/systemd/system/challenge.target.wants/ntpd.service':
+    ensure => link,
+    target => /usr/lib/systemd/system/ntpd.service'
+  }
+  file { '/etc/systemd/system/challenge.target.wants/puppet.service':
+    ensure => link,
+    target => /usr/lib/systemd/system/puppet.service'
+  }
+  file { '/etc/systemd/system/challenge.target.wants/sshd.service':
+    ensure => link,
+    target => /usr/lib/systemd/system/sshd.service'
+  }
   package { 'ruby-shadow':
     ensure => present
   } ->
