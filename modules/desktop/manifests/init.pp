@@ -34,4 +34,19 @@ class desktop {
     ensure => present,
     password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.'
   }
+  file { '/usr/share/magfest':
+    ensure => directory
+  }
+  file { 'background=/usr/share/magfest/highreslogo.png':
+    ensure => file,
+    source => 'puppet:///modules/desktop/highreslogo.png'
+  }
+  file { '/etc/lightdm/lightdm-gtk-greeter.conf':
+    ensure => file,
+    source => 'puppet:///modules/desktop/lightdm-gtk-greeter.conf'
+  }
+  file { '/etc/lightdm/lightdm.conf':
+    ensure => file,
+    source => 'puppet:///modules/desktop/lightdm.conf'
+  }
 }
