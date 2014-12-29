@@ -80,5 +80,8 @@ class desktop {
   file { '/usr/share/glib-2.0/schemas/mate-background.gschema.override':
     ensure => file,
     source => 'puppet:///modules/desktop/mate-background.gschema.override'
+  } ~>
+  exec { '/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas/':
+    refreshonly => true
   }
 }
