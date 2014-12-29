@@ -5,7 +5,7 @@ class desktop {
   exec { '/usr/bin/updatedb':
     refreshonly => true
   }
-  file { ['/home/magfest/.confg', '/home/magfest/.config/dconf']:
+  file { ['/home/magfest/.config', '/home/magfest/.config/dconf']:
     ensure => directory,
     owner => magfest,
     group => magfest
