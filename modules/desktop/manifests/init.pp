@@ -57,7 +57,7 @@ class desktop {
   user { 'magfest':
     ensure => present,
     password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.',
-    groups => 'autologin'
+    groups => ['autologin', 'wheel']
   }
   file { '/usr/share/magfest':
     ensure => directory
@@ -84,5 +84,9 @@ class desktop {
   } ~>
   exec { '/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas/':
     refreshonly => true
+  }
+  file { '/etc/sudoers':
+    ensure => file,
+    source => 'puppet:///modules/desktop/sudoers'
   }
 }
