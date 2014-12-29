@@ -15,6 +15,11 @@ class desktop {
     owner => magfest,
     group => magfest
   } ->
+  file { '/home/magfest/Desktop':
+    ensure => directory, 
+    owner => magfest,
+    group => magfest
+  } ->
   file { '/home/magfest/Desktop/chromium.desktop':
     owner => magfest,
     group => magfest,
