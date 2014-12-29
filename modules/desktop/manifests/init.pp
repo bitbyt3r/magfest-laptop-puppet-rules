@@ -31,6 +31,9 @@ class desktop {
   package { 'ruby-shadow':
     ensure => present
   } ->
+  group { 'autologin':
+    ensure => present
+  } ->
   user { 'magfest':
     ensure => present,
     password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.',
