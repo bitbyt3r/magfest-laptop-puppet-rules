@@ -3,7 +3,6 @@ class graphicscard::innotek {
     ensure => latest
   } ->
   service { 'vboxservice':
-    ensure => running,
     enable => true
   }
 }

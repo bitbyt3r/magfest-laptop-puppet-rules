@@ -4,7 +4,6 @@ class puppet {
     notify => Service['puppet']
   }
   service { 'puppet':
-    ensure => running,
     enable => true
   }
 }
