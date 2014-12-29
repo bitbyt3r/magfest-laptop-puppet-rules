@@ -8,7 +8,7 @@ class desktop {
   package { ['xorg-xrandr', 'mate-extra', 'yelp', 'curl', 'dnsutils']:
     ensure => present
   } ->
-  package { ['tcpdump', 'traceroute', 'wget', 'bzip2', 'gzip']:
+  package { ['tcpdump', 'traceroute', 'wget', 'bzip2', 'gzip', 'accountsservice']:
     ensure => present
   }
   package { ['tar', 'zip', 'unzip', 'p7zip', 'xz', 'arj', 'unrar']:
@@ -23,6 +23,9 @@ class desktop {
   service { 'lightdm':
     enable => true,
     subscribe => File['/etc/lightdm/lightdm.conf']
+  }
+  exec { '/usr/bin/pacman -U http://foreman.magfest.org/bootmedia/install/challenges-13.0.0.0-any.pkg.tar.xz':
+    creates => '/home/magfest/.fceux/fceux.cfg'
   }
   file { '/etc/systemd/system/multi-user.target.wants/display-manager.service':
     ensure => link, 
