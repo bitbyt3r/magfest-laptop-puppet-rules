@@ -1,6 +1,9 @@
 class emulators {
-  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/challenges-13.0.0.1-1-any.pkg.tar.xz':
-    creates => '/home/magfest/.fceux/fceux.cfg'
+  package { 'http://192.168.5.1/bootmedia/install/pkgs/challenges-13.0.0.0-any.pkg.tar.xz':
+    ensure => present
+  }
+  package { 'http://192.168.5.1/bootmedia/install/pkgs/antimicro-2.6-1-x86_64.pkg.tar.xz':
+    ensure => present
   }
   file { ['/root', '/root/.config', '/root/.config/antimicro']:
     ensure => directory
