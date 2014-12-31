@@ -1,5 +1,5 @@
 class emulators {
-  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/challenges-13.0.0.3-1-any.pkg.tar.xz':
+  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/challenges-13.0.0.4-1-any.pkg.tar.xz':
     creates => "/opt/challenges"
   }
 #  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/antimicro-2.6-1-x86_64.pkg.tar.xz':
