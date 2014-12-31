@@ -32,7 +32,7 @@ class emulators {
   }
   user { 'challenges':
     ensure => present,
-    groups => 'autologin'
+    groups => ['autologin', 'input', 'wheel']
   }
   file { '/home/challenges':
     ensure => directory,
