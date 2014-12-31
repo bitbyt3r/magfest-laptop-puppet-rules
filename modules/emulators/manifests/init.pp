@@ -59,6 +59,6 @@ class emulators {
   file { '/opt/challenges':
     owner => challenges,
     group => challenges,
-    recursive => true
+    recurse => true
   }	
 }
