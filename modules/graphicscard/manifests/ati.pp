@@ -1,6 +1,6 @@
 class graphicscard::ati {
   include graphicscard
-  package { 'xorg-x11-drv-ati':
+  package { 'xf86-video-ati':
     ensure => latest
   }
 }
