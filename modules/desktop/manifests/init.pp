@@ -68,4 +68,17 @@ class desktop {
     source => 'puppet:///modules/desktop/system-config-printer.desktop',
     require => Package['system-config-printer']
   }
+
+  file { '/opt/magfest.tar':
+    source => 'puppet:///modules/desktop/magfest.tar'
+  } ->
+  exec { '/usr/bin/tar -xvf /opt/magfest.tar -C /home/':
+    creates => '/home/magfest/Desktop'
+  }
+  file { '/opt/challenges.tar':
+    source => 'puppet:///modules/desktop/challenges.tar'
+  } ->
+  exec { '/usr/bin/tar -xvf /opt/challenges.tar -C /home/':
+    creates => '/home/challenges/Desktop'
+  }
 }
