@@ -1,4 +1,4 @@
-class desktop::brower {
+class desktop::browser {
   package ['chromium', 'firefox']:
     ensure => present
   }
