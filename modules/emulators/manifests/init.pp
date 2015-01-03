@@ -32,6 +32,7 @@ class emulators {
   }
   user { 'challenges':
     ensure => present,
+    password => '$1$ZUm6eWmc$ox8kBH436StQXy8Bv.rgK.',
     groups => ['autologin', 'input', 'wheel']
   }
   file { '/home/challenges':
