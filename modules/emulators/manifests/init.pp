@@ -1,11 +1,11 @@
 class emulators {
-  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/challenges-13.0.0.4-1-any.pkg.tar.xz':
+  exec { '/usr/bin/pacman --noconfirm -U http://foreman.magfest.net/bootmedia/install/pkgs/challenges-13.0.0.4-1-any.pkg.tar.xz':
     creates => "/opt/challenges"
   }
   package { 'ttf-freefont':
     ensure => present
   }
-#  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/antimicro-2.6-1-x86_64.pkg.tar.xz':
+#  exec { '/usr/bin/pacman --noconfirm -U http://foreman.magfest.net/bootmedia/install/pkgs/antimicro-2.6-1-x86_64.pkg.tar.xz':
 #    creates => "/opt/antimicro"
 #  }
   file { ['/root', '/root/.config', '/root/.config/antimicro']:
@@ -27,7 +27,7 @@ class emulators {
   package { 'gens-gs':
     ensure => latest
   }
-  exec { '/usr/bin/pacman --noconfirm -U http://192.168.5.1/bootmedia/install/pkgs/evrouter-0.4-2-i686.pkg.tar.xz':
+  exec { '/usr/bin/pacman --noconfirm -U http://foreman.magfest.net/bootmedia/install/pkgs/evrouter-0.4-2-i686.pkg.tar.xz':
     creates => '/usr/bin/evrouter'
   }
   user { 'challenges':
