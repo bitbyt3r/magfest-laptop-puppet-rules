@@ -1,7 +1,7 @@
 class desktop::browser {
-  package ['chromium', 'firefox']:
+  package { ['chromium', 'firefox']:
     ensure => present
-  }
+  } ->
   file { ['/home/magfest/.config', '/home/magfest/.config/dconf']:
     ensure => directory,
     owner => magfest,
