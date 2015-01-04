@@ -1,4 +1,4 @@
-class ssh ($authkeys = ['mark', 'greg', 'will']) {
+class ssh ($authkeys = ['mark', 'greg', 'will', 'robert']) {
   ssh::key { $authkeys:
     user => 'root'
   }
