@@ -6,4 +6,7 @@ class puppet {
   service { 'puppet':
     enable => true
   }
+  exec { '/usr/bin/rm -f /var/lib/pacman/db.lck':
+    unless => '/usr/bin/pgrep pacman'
+  }
 }

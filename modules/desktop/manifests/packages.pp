@@ -23,4 +23,7 @@ class desktop::packages {
   package { ['networkmanager', 'network-manager-applet', 'dhclient']:
     ensure => present
   }
+  package { 'xf86-input-synaptics':
+    ensure => present
+  }
 }
